@@ -10,18 +10,32 @@ const container = document.querySelector("#container");
 //Creation of a x*y grid of divs
 function gridCreation(numberSquares){
 
+
+
     for(let i = 0; i < numberSquares; i++){
 
-        const numberColumn = document.createElement("div");
-        numberColumn.className = ("column");
+        const column = document.createElement("div");
+        column.className = ("column");
+        column.id = ("column");
+        container.appendChild(column);
 
-        const numberLines = document.createElement("div");
-        numberLines.className = ("lines");
+            for(let y = 0; y < numberSquares; y++){
+            const lines = document.createElement("div");
+            lines.className = ("lines");
 
-        document.querySelector("#container").appendChild(numberColumn);
-        numberColumn.appendChild(numberLines);
-
+            column.appendChild(lines);
+        }
     }
+
+    
+    
+   
+
+    //     document.querySelector("#container").appendChild(numberColumn);
+
+
+    //  
+    
 }
 
 

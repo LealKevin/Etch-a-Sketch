@@ -12,13 +12,13 @@ body{
 
 .column{
     flex: 1;
-    border: solid 3px black;
-    background-color: pink;
+    
     display: flex;
     flex-direction: column;
 }
 
 .lines{
-    border: solid 3px black;
+    border: solid 1px black;
+    background-color: pink;
     flex: 1;
 }
