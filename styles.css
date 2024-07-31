@@ -7,13 +7,18 @@ body{
     display: flex;
     width: 480px;
     height: 480px;
-    flex-wrap: wrap;
     align-content: flex-start;
 }
 
-.squares{
-    flex: 1,1,auto ;
+.column{
+    flex: 1;
     border: solid 3px black;
-    width: 60px;
-    height: 60px;
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+}
+
+.lines{
+    border: solid 3px black;
+    flex: 1;
 }
