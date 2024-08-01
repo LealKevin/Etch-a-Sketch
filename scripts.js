@@ -2,6 +2,28 @@
 
 const container = document.querySelector("#container");
 
+// Button to change the backgroundcolor
+
+const btnChangeBackgroundColor = document.querySelector("#btnChangeBackgroundColor");
+btnChangeBackgroundColor.textContent = ("Change backgound color");
+
+btnChangeBackgroundColor.addEventListener("input", changeBackgroundColor);
+
+function changeBackgroundColor(event){
+
+    let squares = document.querySelectorAll(".lines")
+
+    squares.forEach(square => {
+    square.style.backgroundColor = event.target.value;
+    });
+
+    console.log(squares);
+}
+
+// Button to change brush color
+
+
+
 //Creation of a x*y grid of divs
 function gridCreation(numberSquares){
     
@@ -18,7 +40,11 @@ function gridCreation(numberSquares){
             lines.classList.add("lines");
             lines.id = ("lines");
             column.appendChild(lines);
-            lines.addEventListener("mouseover", () => {lines.style.backgroundColor=("#FF0000")});
+            lines.addEventListener("mouseover", () => {
+                
+                const btnColor = document.querySelector("#btnChangeColor");
+                const btnColorValue = btnColor.value;
+                lines.style.backgroundColor=(btnColorValue)});
 
             arrayLines.push(lines);    
         }   
@@ -40,23 +66,7 @@ function changeSize(){
     btnSize.addEventListener("click",gridCreation(numberSquares));
 }
 
-// Button to change the backgroundcolor
 
-const btnChangeBackgroundColor = document.querySelector("#btnChangeBackgroundColor");
-btnChangeBackgroundColor.textContent = ("Change backgound color");
-
-btnChangeBackgroundColor.addEventListener("input", changeBackgroundColor);
-
-function changeBackgroundColor(event){
-
-    let squares = document.querySelectorAll(".lines")
-
-    squares.forEach(square => {
-    square.style.backgroundColor = event.target.value;
-    });
-
-    console.log(squares);
-}
 
 
 
