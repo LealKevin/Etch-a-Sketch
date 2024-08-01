@@ -2,8 +2,6 @@
 
 const container = document.querySelector("#container");
 
-
-
 //Creation of a x*y grid of divs
 function gridCreation(numberSquares){
     
@@ -27,6 +25,8 @@ function gridCreation(numberSquares){
     }
     return arrayLines;
 }
+ 
+// Button that reset the grid and create a new one 
 
 const btnSize = document.querySelector("#btnSize");
 btnSize.textContent=("New canvas");
@@ -40,13 +40,24 @@ function changeSize(){
     btnSize.addEventListener("click",gridCreation(numberSquares));
 }
 
-        // Need to know why is not working
+// Button to change the backgroundcolor
 
-// const squares = document.getElementsByClassName("#lines");
+const btnChangeBackgroundColor = document.querySelector("#btnChangeBackgroundColor");
+btnChangeBackgroundColor.textContent = ("Change backgound color");
 
-//     for(let i = 0; i < squares.length; i++){
-//         squares[i].addEventListener("mouseover", () => {lines.style.backgroundColor=("#FF0000")});
-//     }
+btnChangeBackgroundColor.addEventListener("input", changeBackgroundColor);
+
+function changeBackgroundColor(event){
+
+    let squares = document.querySelectorAll(".lines")
+
+    squares.forEach(square => {
+    square.style.backgroundColor = event.target.value;
+    });
+
+    console.log(squares);
+}
+
 
 
 
