@@ -34,7 +34,9 @@ btnSize.addEventListener("click", () => {changeSize()});
 
 function changeSize(){
     let numberSquares = prompt("Enter the square size for the new grid");
-    arrayLines = [];
+    while (container.firstChild){
+        container.removeChild(container.firstChild);
+    }
     btnSize.addEventListener("click",gridCreation(numberSquares));
 }
 
