@@ -1,7 +1,7 @@
-body{
+/* body{
     display: flex;
     justify-content: center;
-}
+} */
 
 .container{
     display: flex;
@@ -18,7 +18,10 @@ body{
 }
 
 .lines{
-    border: solid 1px black;
-    background-color: pink;
+    /* border: solid 1px black; */
     flex: 1;
+}
+
+.div:hover {
+    background-color: gold;
 }
