@@ -107,13 +107,26 @@ function changeSize(){
     }
 
 // Opacity changer
+let opacityMode = false;
 
-function opacityChanger(){
-    let opacity = document.querySelector("#opacity");
-    let opacityValue = opacity.value;
+const btnOpacity = document.querySelector("#btnOpacity");
+btnOpacity.textContent=("Opacity");
+
+btnOpacity.addEventListener("change", () => {
+    opacityMode = btnOpacity.checked;
+})
+
+function opacityChanger(element){
+    element.style.opacity=("0");
+    let opacityValue = element.style.opacity;
+    let addOpacity = opacityValue++;
+
+    element.style.backgroundColor=("back")
+    element.style.opacity+=(addOpacity);
     console.log(opacityValue);
-
 }
+
+
 
 // Change color
 
@@ -124,12 +137,21 @@ function changeColor(element) {
         element.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
     }
 
+    else if(opacityMode){
+        opacityChanger(element); 
+    }
+
     else{
         const btnColor = document.querySelector("#btnChangeColor");
         const btnColorValue = btnColor.value;
         element.style.backgroundColor=(btnColorValue)};
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const squares = gridCreation(64);
+    squares.forEach(squares => {
+    squares.addEventListener("mouseover", () => changeColor(squares))}
+   )});
 
 
 
