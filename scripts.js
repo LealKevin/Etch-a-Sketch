@@ -116,25 +116,32 @@ btnOpacity.addEventListener("change", () => {
     opacityMode = btnOpacity.checked;
 })
 
+
+
 function opacityChanger(element){
-    element.style.opacity=("0");
-    let opacityValue = element.style.opacity;
-    let addOpacity = opacityValue++;
 
-    element.style.backgroundColor=("back")
-    element.style.opacity+=(addOpacity);
-    console.log(opacityValue);
+    element.style.backgroundColor=("black")
+
+    console.log(element.style.opacity, parseFloat(element.style.opacity) + 0.1);
+
+    element.style.opacity = parseFloat(element.style.opacity) + 0.1;
+
+   
+
 }
-
-
 
 // Change color
 
 function changeColor(element) {
 
+    if(!element.style.opacity){
+        element.style.opacity=("0");
+    }
+
     if(rainbowYesNo){
         const hue = (Math.floor(Math.random() * 360));
         element.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+        element.style.opacity=("1");
     }
 
     else if(opacityMode){
@@ -144,13 +151,15 @@ function changeColor(element) {
     else{
         const btnColor = document.querySelector("#btnChangeColor");
         const btnColorValue = btnColor.value;
-        element.style.backgroundColor=(btnColorValue)};
+        element.style.backgroundColor=(btnColorValue);
+        element.style.opacity=("1");}
+    
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     const squares = gridCreation(64);
-    squares.forEach(squares => {
-    squares.addEventListener("mouseover", () => changeColor(squares))}
+    squares.forEach(square => {
+    square.addEventListener("mouseover", () => changeColor(square))}
    )});
 
 
