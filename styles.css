@@ -1,7 +1,17 @@
-/* body{
+
+body{
     display: flex;
-    justify-content: center;
-} */
+    flex-direction: column;
+    margin: 0;
+}
+
+.body{
+ display: flex;
+ flex-direction: row;
+ background-color: #BDE0FE;
+ justify-content: center;
+}
+
 
 .container{
     border: solid 2px rgba(0, 0, 0);
@@ -9,11 +19,15 @@
     width: 480px;
     height: 480px;
     align-content: flex-start;
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+    background-color: white;
 }
 
 .column{
     flex: 1;
-    
     display: flex;
     flex-direction: column;
 }
@@ -28,6 +42,56 @@
     background-color: gold;
 }
 
-.opacity{
+.header{
+    height: 100px;
+    background-color: #FFC8DD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom{
+    height: 70px;
+    background-color: #FFC8DD;
+}
+
+.rightMenu{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    align-self: center;
+}
+
+.bgChoice{
+    display: flex;
+    align-items: center;
+}
+
+.marginRight{
+    margin-right: 10px;
+}
+
+.containerCenter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnSize{
+    width: 130px;
+    margin-top: 20px;
+    background-color: #FFC8DD;
+    align-items: center;
+    border: none;
     
+}
+
+.font{
+    font-family: 'Jura';
+    font-size: 30px;
+    color: white;
+}
+
+.font12px{
+    font-size: 20px;
 }

@@ -6,32 +6,62 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="scripts.js" defer></script>
+    <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet'>
   </head>
   <body>
-    <button class="btnSize" id="btnSize"></button>
+    
+    <div class="header font">
+      <div>Etch-a-Sketch</div>
+    </div>
+
+    <div class="body">
+
+      <div class="containerCenter">
+        <button class="btnSize font font12px" id="btnSize"></button>
+        <div id="container" class="container"></div>
+      </div>
+
+      <div class="rightMenu font">
+
+        <div class="bgChoice">
+          <input type="color"
+            class="btnChangeBackgroundColor marginRight"
+            id="btnChangeBackgroundColor"
+          ></input>
+          <div>Background</div>
+        </div>
+  
+        <!-- Brush color change -->
+        <div class="bgChoice">
+          <input type="color"
+            class="btnChangeColor marginRight"
+            id="btnChangeColor"
+          ></input>
+          <div>Brush</div>
+        </div>
+  
+        <!-- Button to toggle Rainbow mode on/off -->
+        <div class="bgChoice">
+          <input type="checkbox" id="btnRainbow"></input>
+          <div>Rainbow mode</div>
+        </div>
+        <!-- Opacity mode -->
+        <div class="bgChoice">
+          <input type="checkbox" id="btnOpacity"></input>
+          <div>Opacity mode</div>
+        </div>
+      
+      </div>
+     
+    </div>
+    <div class="bottom"></div>
 
     <!-- Background color change --> 
-    <input type="color"
-      class="btnChangeBackgroundColor"
-      id="btnChangeBackgroundColor"
-    >Background color</input>
-
-    <!-- Brush color change --> 
-    <input type="color"
-      class="btnChangeColor"
-      id="btnChangeColor"
-    >Color</input>
-
-    <!-- Button to toggle Rainbow mode on/off -->
-
-    <input type="checkbox" id="btnRainbow"></input>
-
-    <!-- Opacity mode -->
-    <input type="checkbox" id="btnOpacity"></input>
     
 
+    
 
-    <div id="container" class="container"></div>
+   
 
 
     

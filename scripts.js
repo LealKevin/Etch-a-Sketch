@@ -40,16 +40,52 @@ btnChangeBackgroundColor.textContent = ("Change backgound color");
 
 btnChangeBackgroundColor.addEventListener("input", changeBackgroundColor);
 
-function changeBackgroundColor(event){
+function changeBackgroundColor(color){
 
     let squares = document.querySelectorAll(".lines")
 
     squares.forEach(square => {
-    square.style.backgroundColor = event.target.value;
+    square.style.backgroundColor = color;
     });
-
-  
 }
+
+function addEventListener(type, functionChoice){
+
+    const event = {target: {value:"black"}};
+    functionChoice(event);
+
+    }
+
+
+
+
+
+// ((boolean) => string) => void
+function playGame(getChoice){ 
+
+    for( let i = 0; i < 10 ; i++){
+        let num = i;
+        const isComputerTurn = num %2 === 0; // true or false
+        const choice = getChoice(isComputerTurn);
+    }
+}
+
+playGame((isComputerTurn) => { if(isComputerTurn){return "paper"} return "scissors"})
+
+// function paper(){ // () => string
+//     let choice = "paper";
+//     return choice;
+// }
+
+// function rock(){ // () => string
+//     let choice = "rock";
+//     return choice;
+// }
+
+playGame(() => 10, () => "rock");
+
+
+
 
 // Button to change brush color
 
