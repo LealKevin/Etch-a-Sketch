@@ -53,6 +53,9 @@ body{
 .bottom{
     height: 70px;
     background-color: #FFC8DD;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .rightMenu{
@@ -92,6 +95,10 @@ body{
     color: white;
 }
 
-.font12px{
+.font20px{
     font-size: 20px;
+}
+
+.font15px{
+    font-size: 15px;
 }
