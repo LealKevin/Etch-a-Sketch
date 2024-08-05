@@ -62,7 +62,7 @@ body{
     align-self: center;
 }
 
-.bgChoice{
+.rightMenuChildren{
     display: flex;
     align-items: center;
 }

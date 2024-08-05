@@ -1,36 +1,4 @@
 
-// Create a grid x*x
-    // - deleting the older one
-    // - creating a new one
-
-// Input to change the background color
-
-// Input (type color) to change the "brush color"
-
-// input "on/off", to create a "rainbow" effect
-//     -hsl ((0+i), 30%, 30%)
-
-// Input type "slider" 0 to 100 to change the oppacity of the brush
-//     needs to add the oppacity value to previous oppacity value ex: 10% + 10% = 20%
-
-// gridCreation(creates and return divs)
-
-// btn to toggle on off rainbow mode
-
-// changeColor(){
-//     while or for(rainbow on){
-//         squares.style.backgroundColor=("hsl ((0+i), 30%, 30%)")
-//     }
-
-//         squares.style.backgroundColor=("value of the input brush color")
-        
-// }
-
-// alldivs.addEventListener("mouseover, changeColor()")
-
-
-
-
 const container = document.querySelector("#container");
 
 // Button to change the backgroundcolor
@@ -51,38 +19,6 @@ function changeBackgroundColor(event){
 
 
 
-
-
-
-
-// ((boolean) => string) => void
-function playGame(getChoice){ 
-
-    for( let i = 0; i < 10 ; i++){
-        let num = i;
-        const isComputerTurn = num %2 === 0; // true or false
-        const choice = getChoice(isComputerTurn);
-    }
-}
-
-playGame((isComputerTurn) => { if(isComputerTurn){return "paper"} return "scissors"})
-
-// function paper(){ // () => string
-//     let choice = "paper";
-//     return choice;
-// }
-
-// function rock(){ // () => string
-//     let choice = "rock";
-//     return choice;
-// }
-
-playGame(() => 10, () => "rock");
-
-
-
-
-// Button to change brush color
 
 
 
@@ -129,37 +65,50 @@ btnSize.addEventListener("click", () => {changeSize()});
 
 function changeSize(){
     let numberSquares = prompt("Enter the square size for the new grid");
-    while (container.firstChild){
-        container.removeChild(container.firstChild);
+    if(numberSquares <= 100 && numberSquares >0){
+        while (container.firstChild){
+            container.removeChild(container.firstChild);
+        }
+        const squares = gridCreation(numberSquares);
+        squares.forEach(squares => {
+        squares.addEventListener("mouseover", () => changeColor(squares))});
+        }
+    else{
+        alert("The grid size need to be betwenn 0 and 100")
     }
-    const squares = gridCreation(numberSquares);
-    squares.forEach(squares => {
-    squares.addEventListener("mouseover", () => changeColor(squares))});
     }
+  
 
 // Opacity changer
 let opacityMode = false;
 
 const btnOpacity = document.querySelector("#btnOpacity");
-btnOpacity.textContent=("Opacity");
 
 btnOpacity.addEventListener("change", () => {
     opacityMode = btnOpacity.checked;
 })
 
-
-
 function opacityChanger(element){
 
     element.style.backgroundColor=("black")
-
-    console.log(element.style.opacity, parseFloat(element.style.opacity) + 0.1);
-
     element.style.opacity = parseFloat(element.style.opacity) + 0.1;
 
-   
-
 }
+
+// Erase mode
+
+let eraseMode = false;
+const btnErase = document.querySelector("#btnErase");
+
+btnErase.addEventListener("change", () => {
+    eraseMode = btnErase.checked;
+})
+
+function eraseChanger(element){
+    element.style.opacity=("0");
+    element.style.backgroundColor=("white");
+}
+
 
 // Change color
 
@@ -177,6 +126,11 @@ function changeColor(element) {
 
     else if(opacityMode){
         opacityChanger(element); 
+    }
+
+    else if(eraseMode){
+        eraseChanger(element);
+        
     }
 
     else{
