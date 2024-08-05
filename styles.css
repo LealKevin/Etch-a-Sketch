@@ -3,13 +3,16 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0;
+    height: 100vh;
 }
 
 .body{
+    flex: 1;
  display: flex;
  flex-direction: row;
  background-color: #BDE0FE;
  justify-content: center;
+ align-items: center;
 }
 
 
