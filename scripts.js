@@ -40,21 +40,16 @@ btnChangeBackgroundColor.textContent = ("Change backgound color");
 
 btnChangeBackgroundColor.addEventListener("input", changeBackgroundColor);
 
-function changeBackgroundColor(color){
+function changeBackgroundColor(event){
 
     let squares = document.querySelectorAll(".lines")
 
     squares.forEach(square => {
-    square.style.backgroundColor = color;
+    square.style.backgroundColor = event.target.value;
     });
 }
 
-function addEventListener(type, functionChoice){
 
-    const event = {target: {value:"black"}};
-    functionChoice(event);
-
-    }
 
 
 
